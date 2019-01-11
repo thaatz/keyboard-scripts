@@ -12,7 +12,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 capslock::
 SetCapsLockState, Off ;keep capslock off
 BlockInput, MouseMoveOff ;make sure we can move the mouse
-SetTimer, monitorMouse, 10
+SetTimer, monitorMouse, 1
 BlockInput, MouseMove ;stop mouse input temporarily as a speed limiter
 return
 
@@ -29,7 +29,7 @@ return
 monitorMouse:
 BlockInput, MouseMoveOff ;make sure the mouse can move here
 MouseGetPos, start_x, start_y
-Sleep 5
+Sleep 1
 MouseGetPos, end_x, end_y
 BlockInput, MouseMove ;stop the mouse temporarily, basically as a speed limiter
 mousemove, start_x, start_y
@@ -45,13 +45,13 @@ If (start_x < end_x) ; if end_x is further to the right
 If (start_y > end_y) ; if end_y is further to the top
  {
  send {wheelup}
- sleep 50 ;slow the scrolling down a little bit
+ sleep 10 ;slow the scrolling down a little bit
  }
 If (start_y < end_y) ; if end_y is further to the bottom
  {
  ;Send {Down}
  Send {wheeldown}
- sleep 50
+ sleep 10
  }
 mousemove, start_x, start_y
 return
