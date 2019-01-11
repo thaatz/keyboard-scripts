@@ -29,25 +29,24 @@ return
 monitorMouse:
 BlockInput, MouseMoveOff ;make sure the mouse can move here
 MouseGetPos, start_x, start_y
-Sleep 1
-MouseGetPos, end_x, end_y
+Sleep 5
 BlockInput, MouseMove ;stop the mouse temporarily, basically as a speed limiter
+MouseGetPos, end_x, end_y
 mousemove, start_x, start_y
-;BlockInput, MouseMoveoFF
-If (start_x > end_x) ; if end_x is further to the left
+If (start_x - 5 > end_x) ; if end_x is further to the left
  {
  send {wheelleft}
  }
-If (start_x < end_x) ; if end_x is further to the right
+If (start_x + 5 < end_x) ; if end_x is further to the right
  {
  send {wheelright}
  }
-If (start_y > end_y) ; if end_y is further to the top
+If (start_y -5 > end_y) ; if end_y is further to the top
  {
  send {wheelup}
  sleep 10 ;slow the scrolling down a little bit
  }
-If (start_y < end_y) ; if end_y is further to the bottom
+If (start_y + 5 < end_y) ; if end_y is further to the bottom
  {
  ;Send {Down}
  Send {wheeldown}
