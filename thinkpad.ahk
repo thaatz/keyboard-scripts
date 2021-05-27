@@ -3,11 +3,23 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 #installKeybdHook
+#InstallMouseHook ; May to make a difference but not sure.
+
 
 ;ideas
 ;change the middle trackpoint mouse button to be middle mouse button and then we can just use the capslock key for scrolling using this script
 ;capslock changes mouse move to scroll
-;capslock changes esdf to arrows
+
+; to replace TouchCursors
+; https://www.autohotkey.com/boards/viewtopic.php?t=61420
+#If GetKeyState("CapsLock", "p")
+$*i::up
+$*j::left
+$*k::down
+$*l::right
+$*u::PgUp
+$*o::PgDn
+#If
 
 capslock::
 SetCapsLockState, Off ;keep capslock off
