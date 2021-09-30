@@ -1,0 +1,116 @@
+;; https://github.com/scottrosenquist/.dotfiles/blob/master/common/.config/kmonad/thinkpadhomerowmods-refactor.kbd
+
+#| Copy this out to easily specify a new layer
+(deflayer "name"
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    _    _              _
+  _    _    _              _              _    _    _    _    _    _
+                                                         _    _    _
+)
+|#
+
+;; Define the IO parameters of this keyboard
+(defcfg
+  input  (low-level-hook)
+  output (send-event-sink)
+  
+  ;; This option tells KMonad to let non-configured keys act normal
+  ;;fallthrough true
+)
+
+;; Define layer toggling shortcuts
+(defalias
+  lts (layer-toggle shift)
+  ala (tap-hold 200 a lalt)
+  slm (tap-hold 200 s lmet)
+  dlc (tap-hold-next-release 200 d lctl)
+  fls (tap-hold 200 f @lts)
+  nrs (tap-hold 200 n @lts)
+  erc (tap-hold 200 e rctl)
+  irm (tap-hold 200 i rmet)
+  ora (tap-hold 200 o ralt)
+  num (layer-toggle number)
+  nav (layer-toggle navigation)
+  sym (layer-toggle symbols)
+  bra (layer-toggle brackets)
+  sbr (tap-hold 200 spc @bra)
+  rsy (tap-hold 200 ret @sym)
+  snu (tap-hold 200 ; @num)
+  sna (tap-hold 200 / @nav)
+  ses S-esc
+  sre S-ret
+  )
+
+;; Define the input-layout coming from the keyboard
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '         ret 
+  lsft z    x    c    v    b    n    m    ,    .    /              rsft
+  lctl lmet lalt           spc            ralt rmet rctl pgup up   pgdn
+                                                         left down rght
+)
+
+(deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    @dlc    f    g    h    j    k    l    ;    '         ret 
+  lsft z    x    c    v    b    n    m    ,    .    /              rsft
+  lctl lmet lalt           spc            ralt rmet rctl pgup up   pgdn
+                                                         left down rght
+)
+
+(deflayer shift
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    Z    F    R    P    B    _    J    L    U    Y    Q    _    _
+  _    A    _    S    T    G    _    M    N    E    I    O    _    _
+  _    V    X    C    D    W    _    K    H    `    !    "         _
+  _    _    _    @ses tab  :    S-/  @sre del  _    _              _
+  _    _    _              _              _    _    _    _    _    _
+                                                         _    _    _
+)
+
+(deflayer number
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    7    8    9    _    _    _
+  _    lalt lmet lctl lsft _    _    _    4    5    6    _    _    _
+  _    _    _    _    _    _    _    _    1    2    3    _         _
+  _    _    _    _    _    _    _    0    _    _    _              _
+  _    _    _              _              _    _    _    _    _    _
+                                                         _    _    _
+)
+
+(deflayer brackets
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    S-9  S-0  &    _    _    _
+  _    lalt lmet lctl lsft _    _    _    {    }    |    _    _    _
+  _    _    _    _    _    _    _    _    <    >    \    _         _
+  _    _    _    _    _    _    [    ]    _    _    _              _
+  _    _    _              _              _    _    _    _    _    _
+                                                         _    _    _
+)
+
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    #    ^    $    _    _    _    _    _    _    _    _    _
+  _    _    *    -    +    _    _    _    rsft rctl rmet ralt _    _
+  _    _    ~    =    S--  _    _    _    _    _    _    _         _
+  _    _    _    _    @    %    _    _    _    _    _              _
+  _    _    _              _              _    _    _    _    _    _
+                                                         _    _    _
+)
+
+(deflayer navigation
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    up   _    _    _    _    _    _    _    _    _    _
+  _    _    left down rght _    _    _    rsft rctl rmet ralt _    _
+  _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    _    _              _
+  _    _    _              _              _    _    _    _    _    _
+                                                         _    _    _
+)
