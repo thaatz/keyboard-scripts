@@ -45,11 +45,10 @@
   ses S-esc
   sre S-ret
 
-  ;;met_a (tap-hold-next-release 200 a lmet)
-  met_a (tap-hold-next-release 165 a lmet)
-  alt_s (tap-hold-next-release 165 s lalt)
-  ctl_d (tap-hold-next-release 165 d lctl)
-  sft_f (tap-hold-next-release 165 f lsft)
+  met_a (tap-hold-next-release 150 a lmet)
+  alt_s (tap-hold-next-release 150 s lalt)
+  ctl_d (tap-hold-next-release 150 d lctl)
+  sft_f (tap-hold-next-release 150 f lsft)
 
   ;;combo aliases
   cut (around ctl x)
@@ -66,13 +65,10 @@
   ctbs_bs (tap-hold 200 bspc @ctbs)
 
   testtab (tap-hold 200 tab (around ctl tab))
-  l_sp (tap-hold 200 s (layer-toggle s_special))
-  ;; stopped using this layer. need to clean up later
-
-  l_alt (tap-hold 200 lalt (layer-toggle alt))
+  ;;l_sp (tap-hold 200 s (layer-toggle s_special))
+  e_arrows (tap-hold-next-release 150 e (layer-toggle arrows))
 
   )
-;; tap-hold-next-release seemed to sometimes trigger if i typed too fast
 
 ;; Define the input-layout coming from the keyboard
 (defsrc
@@ -88,7 +84,7 @@
 (deflayer qwerty-wide
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    =    6    7    8    9    0    -    @ctbs_bs
-  tab  q    w    e    r    t    ]    y    u    i    o    p    '    \
+  tab  q    w    @e_arrows    r    t    ]    y    u    i    o    p    '    \
   lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    j    k    l    ;         ret 
   lsft z    @x_ct    @c_cp    @v_ps    b    @testtab    n    m    ,    .              /
   lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
@@ -105,23 +101,13 @@
                                                          left down rght
 )
 
-(deflayer s_special
+(deflayer arrows
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    =    6    7    8    9    0    -    bspc
-  tab  q    w    @cltab    r    t    ]    y    u    up    o    p    '    \
-  caps a    _  @backtab @nexttab    g    [    h    j    down    l    ;         ret 
-  lsft z    x    c    v    b    @testtab    n    m    ,    .              /
+  tab  q    w    _    r    t    ]    y    u    up    o    p    '    \
+  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    left    down    right    ;         ret 
+  lsft z    x    c    v    b    @    n    m    ,    .              /
   lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
-                                                        left down rght
-)
-
-(deflayer alt
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
-  grv  @cltab    @backtab @nexttab    4    5    =    6    7    8    9    0    -    bspc
-  tab  q    w    e    r    t    ]    y    u    i    o    p    '    \
-  caps a    @l_sp  @ctl_d @sft_f    g    [    h    j    k    l    ;         ret 
-  lsft z    x    c    v    b    @testtab    n    m    ,    .              /
-  lctl lmet _           spc            spc rmet rctl pgup up   pgdn
                                                         left down rght
 )
 
