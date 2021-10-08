@@ -45,10 +45,10 @@
   ses S-esc
   sre S-ret
 
-  met_a (tap-hold-next-release 150 a lmet)
+  met_a (tap-hold-next-release 160 a lmet)
   alt_s (tap-hold-next-release 150 s lalt)
   ctl_d (tap-hold-next-release 150 d lctl)
-  sft_f (tap-hold-next-release 150 f lsft)
+  sft_f (tap-hold-next-release 140 f lsft)
 
   ;;combo aliases
   cut (around ctl x)
@@ -67,6 +67,7 @@
   testtab (tap-hold 200 tab (around ctl tab))
   ;;l_sp (tap-hold 200 s (layer-toggle s_special))
   e_arrows (tap-hold-next-release 150 e (layer-toggle arrows))
+  ;_arrows (tap-hold-next-release 150 ; (layer-toggle arrows))
 
   )
 
@@ -85,7 +86,7 @@
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    =    6    7    8    9    0    -    @ctbs_bs
   tab  q    w    @e_arrows    r    t    ]    y    u    i    o    p    '    \
-  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    j    k    l    ;         ret 
+  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    j    k    l    @;_arrows         ret 
   lsft z    @x_ct    @c_cp    @v_ps    b    @testtab    n    m    ,    .              /
   lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
                                                         left down rght
@@ -105,7 +106,7 @@
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    =    6    7    8    9    0    -    bspc
   tab  q    w    _    r    t    ]    y    u    up    o    p    '    \
-  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    left    down    right    ;         ret 
+  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    left    down    right    _         ret 
   lsft z    x    c    v    b    @    n    m    ,    .              /
   lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
                                                         left down rght
