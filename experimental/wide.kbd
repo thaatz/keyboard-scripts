@@ -2,6 +2,11 @@
 ;; wide layout mod philosophy form https://colemakmods.github.io/ergonomic-mods/wide.html
 ;; home row modifiers ideas from https://precondition.github.io/home-row-mods
 
+;; ideas
+;; numpad layer by using lalt next to spacebar
+;; toggle layers, this way i dont need to hold the keys down
+;; lalt could be main layer, ralt could be second layer (like arrow keys and stuff), rctrl could be mouse movement
+
 #| Copy this out to easily specify a new layer
 (deflayer "name"
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -45,6 +50,7 @@
   ses S-esc
   sre S-ret
 
+;; 150ms for super key was bad when typing "as" quickly
   met_a (tap-hold-next-release 160 a lmet)
   alt_s (tap-hold-next-release 150 s lalt)
   ctl_d (tap-hold-next-release 150 d lctl)
@@ -86,8 +92,8 @@
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    =    6    7    8    9    0    -    @ctbs_bs
   tab  q    w    @e_arrows    r    t    ]    y    u    i    o    p    '    \
-  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    j    k    l    @;_arrows         ret 
-  lsft z    @x_ct    @c_cp    @v_ps    b    @testtab    n    m    ,    .              /
+  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    j    k    l    ;         ret 
+  lsft z    @x_ct    @c_cp    @v_ps    b    @ctbs_bs    n    m    ,    .              /
   lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
                                                         left down rght
 )
@@ -108,7 +114,7 @@
   tab  q    w    _    r    t    ]    y    u    up    o    p    '    \
   lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    left    down    right    _         ret 
   lsft z    x    c    v    b    @    n    m    ,    .              /
-  lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
+  lctl lmet lalt           spc            _ rmet rctl pgup up   pgdn
                                                         left down rght
 )
 
