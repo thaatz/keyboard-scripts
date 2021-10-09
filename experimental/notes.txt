@@ -1,0 +1,19 @@
+ideas
+https://www.youtube.com/watch?v=yiwUjLaebuw
+https://www.youtube.com/watch?v=49iE37HOVbk
+
+delay
+- 150 was just a little bit inconsistent when rolling keys such as "as" and "er"
+
+layers
+- perhaps make a layer chooser or something that can consistently toggle layers without the need of an on screen display or something to indicate which layer you are on
+
+
+superwide
+-basically want to make it so my pinkys do a lot less work
+  - less reaching
+  - less holding shift
+move tilde to lctrl
+lalt could become tab?
+  - holding lalt (tab) could be a layer toggle
+maybe hold space for shift?
