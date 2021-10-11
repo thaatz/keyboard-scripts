@@ -1,11 +1,8 @@
 ;; thinkpad layout from https://github.com/scottrosenquist/.dotfiles/blob/master/common/.config/kmonad/thinkpadhomerowmods-refactor.kbd
 ;; wide layout mod philosophy form https://colemakmods.github.io/ergonomic-mods/wide.html
+;; weird curl from https://colemakmods.github.io/ergonomic-mods/curl.html 
+;;    moved left shift to lalt
 ;; home row modifiers ideas from https://precondition.github.io/home-row-mods
-
-;; ideas
-;; numpad layer by using lalt next to spacebar
-;; toggle layers, this way i dont need to hold the keys down
-;; lalt could be main layer, ralt could be second layer (like arrow keys and stuff), rctrl could be mouse movement
 
 #| Copy this out to easily specify a new layer
 (deflayer "name"
@@ -68,11 +65,12 @@
   c_cp (tap-hold 200 c @copy)
   v_ps (tap-hold 200 v @paste)
   ctbs_bs (tap-hold 200 bspc @ctbs)
+  tab_shft (tap-hold 150 tab lsft)
 
   testtab (tap-hold 200 tab (around ctl tab))
   ;;l_sp (tap-hold 200 s (layer-toggle s_special))
-  e_arrows (tap-hold-next-release 150 e (layer-toggle arrows))
-  ;_arrows (tap-hold-next-release 150 ; (layer-toggle arrows))
+  ;;e_arrows (tap-hold-next-release 160 e (layer-toggle arrows))
+  layarrow (layer-toggle arrows)
 
   )
 
@@ -89,11 +87,11 @@
 
 (deflayer qwerty-wide
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
-  grv  1    2    3    4    5    =    6    7    8    9    0    -    @ctbs_bs
-  tab  q    w    @e_arrows    r    t    ]    y    u    i    o    p    '    \
-  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    j    k    l    ;         ret 
-  lsft z    @x_ct    @c_cp    @v_ps    b    @ctbs_bs    n    m    ,    .              /
-  lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
+  1    2    3    4    5    grv    =    6    7    8    9    0    -    @ctbs_bs
+  q    w    e    r    t    tab   ]    y    u    i    o    p    '    \
+  @met_a    @alt_s  @ctl_d @sft_f    g    lctl    [    h    j    k    l    ;         ret 
+  z    @x_ct    @c_cp    @v_ps    b    lsft    _    n    m    ,    .              /
+  lctl lmet @tab_shft           spc            @layarrow rmet rctl pgup up   pgdn
                                                         left down rght
 )
 
@@ -110,10 +108,10 @@
 (deflayer arrows
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    =    6    7    8    9    0    -    bspc
-  tab  q    w    _    r    t    ]    y    u    up    o    p    '    \
-  lctl @met_a    @alt_s  @ctl_d @sft_f    g    [    h    left    down    right    _         ret 
-  lsft z    x    c    v    b    @    n    m    ,    .              /
-  lctl lmet lalt           spc            _ rmet rctl pgup up   pgdn
+  q    w    _    r    t    tab    ]    y    u    up    o    p    '    \
+  @met_a    @alt_s  @ctl_d @sft_f    g    lctl    [    h    left    down    right    ;         ret 
+  z    x    c    v    b    lsft    _    n    m    ,    .              /
+  lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
                                                         left down rght
 )
 
