@@ -15,3 +15,5 @@
 // https://docs.qmk.fm/#/config_options?id=behaviors-that-can-be-configured
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5

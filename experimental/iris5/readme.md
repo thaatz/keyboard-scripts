@@ -4,6 +4,7 @@
   - on windows, use qmk msys to compile from source
   - https://github.com/qmk/qmk_distro_msys/releases
   - the firmware will download to `%userprofile%\qmk_firmware`
+  - compile using `qmk compile -kb keebio/iris/rev5 -km tom`
 - use qmk toolbox to flash
   - https://github.com/qmk/qmk_toolbox/releases
 - use vial to easily modify the layout
