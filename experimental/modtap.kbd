@@ -53,7 +53,8 @@
   met_a (tap-hold 200 a lmet)
   alt_s (tap-hold-next-release 150 s lalt)
   ctl_d (tap-hold-next-release 140 d lctl)
-  sft_f (tap-hold-next-release 140 f lsft)
+  sft_f (tap-hold 140 f lsft)
+  sft_j (tap-hold-next-release 140 j lsft)
 
   ;;combo aliases
   cut (around ctl x)
@@ -87,13 +88,13 @@
                                                          left down rght
 )
 
-(deflayer qwerty-wide
+(deflayer qwerty
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps @met_a    @alt_s  @ctl_d @sft_f    g    h    j    k    l    @;_arrows    '     ret 
+  caps @met_a    @alt_s  @ctl_d @sft_f    g    h    @sft_j    k    l    @;_arrows    '     ret 
   lsft z    @x_ct    @c_cp    @v_ps    b     n    m    ,    .              / rsft
-  lctl lmet lalt           spc            spc rmet rctl pgup up   pgdn
+  lctl lmet @sym           spc            spc rmet rctl pgup up   pgdn
                                                         left down rght
 )
 
@@ -140,8 +141,8 @@
 (deflayer symbols
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    #    ^    $    _    _    _    _    _    _    _    _    _
-  _    _    *    -    +    _    _    _    rsft rctl rmet ralt _    _
-  _    _    ~    =    S--  _    _    _    _    _    _    _         _
+  _    _    *    -    +    _    _    _    rsft -    = ralt _    _
+  _    _    ~    =    _    _    _    S-9  S-0  _    _    _         _
   _    _    _    _    @    %    _    _    _    _    _              _
   _    _    _              _              _    _    _    _    _    _
                                                          _    _    _
