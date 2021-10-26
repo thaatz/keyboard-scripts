@@ -74,6 +74,7 @@
   ;;l_sp (tap-hold 200 s (layer-toggle s_special))
   e_arrows (tap-hold-next-release 150 e (layer-toggle arrows))
   ;_arrows (tap-hold-next-release 150 ; (layer-toggle arrows))
+  arrows (layer-toggle arrows)
 
   )
 
@@ -92,9 +93,9 @@
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps @met_a    @alt_s  @ctl_d @sft_f    g    h    @sft_j    k    l    @;_arrows    '     ret 
+  bspc @met_a    @alt_s  @ctl_d @sft_f    g    h    @sft_j    k    l    @;_arrows    '     ret 
   lsft z    @x_ct    @c_cp    @v_ps    b     n    m    ,    .              / rsft
-  lctl lmet @sym           spc            spc rmet rctl pgup up   pgdn
+  lctl lmet @sym           spc            @arrows rmet rctl pgup up   pgdn
                                                         left down rght
 )
 
