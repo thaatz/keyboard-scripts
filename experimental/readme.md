@@ -22,3 +22,5 @@
   - consumer boards and accessories like keycaps
 - https://novelkeys.com/
   - custom pcbs and custom boards and accessories like keycaps and switches
+- https://keyhive.xyz/
+  - custom pcb, parts, and prebuilts. stock is kind of limited though
