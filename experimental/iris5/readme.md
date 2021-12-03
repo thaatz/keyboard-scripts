@@ -1,5 +1,5 @@
 
-- i have iris v5
+- i have iris v5 with mill-max 7305 hotswap sockets
 - https://docs.qmk.fm/#/newbs_getting_started
   - on windows, use qmk msys to compile from source
   - https://github.com/qmk/qmk_distro_msys/releases
