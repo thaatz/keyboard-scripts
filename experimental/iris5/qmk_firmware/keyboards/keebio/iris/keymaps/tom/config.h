@@ -16,4 +16,5 @@
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
 
+// https://www.reddit.com/r/MechanicalKeyboards/comments/mq3n12/via_how_to_add_more_than_4_layers/
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
